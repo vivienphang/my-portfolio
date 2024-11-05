@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Vivien Phang | Software Developer</title>
+  </head>
+  <body class="min-h-screen min-w-full primary-font">
+    <div class="p-8">
+      <!-------- Header Section ------->
+      <header class="w-full primary-font-color w-full">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center">
+          <h1 class="text-3xl font-bold">Vivien</h1>
+          <ul class="flex space-x-6">
+            <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+            <li><a href="#about" class="hover:text-blue-400">About</a></li>
+            <li>
+              <a href="#skills" class="hover:text-blue-400">Skills</a>
+            </li>
+            <li>
+              <a href="#experience" class="hover:text-blue-400">Experience</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-blue-400">Contact Me</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main class="max-w-7xl mx-auto py-4 space-y-18 primary-font-color">
+        <!-- Home Section -->
+        <section
+          class="min-h-[80vh] flex flex-col justify-center items-center text-white space-y-2"
+          id="home"
+        >
+          <h1 class="text-5xl md:text-6xl font-bold">Hello, I'm Vivien!</h1>
+          <div class="flex items-center text-2xl md:text-3xl font-light">
+            <p class="whitespace-nowrap">I'm a&nbsp;</p>
+            <span
+              class="text-indigo-400 font-medium typing-effect"
+              style="width: 16ch"
+            >
+              Software Developer.
+            </span>
+          </div>
+          <p class="text-lg md:text-xl primary-font-color">
+            Former QA Executive turned Software Developer
+          </p>
+        </section>
+
+        <!-- About Section -->
+        <section
+          id="about"
+          class="min-h-[80vh] flex flex-col justify-center items-start text-center text-white space-y-2"
+        >
+          <h2 class="text-3xl font-bold">About Me</h2>
+          <div class="max-w-2xl text-lg mt-4 text-gray-300">
+            <!-- Left container for Executive summary -->
+            <p class="text-justify">
+              A brief executive summary that highlights your experience,
+              strengths, and unique qualities. A brief executive summary that
+              highlights your experience, strengths, and unique qualities. A
+              brief executive summary that highlights your experience,
+              strengths, and unique qualities.
+            </p>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section
+          id="skills"
+          class="min-h-[80vh] flex flex-col justify-center items-start text-center text-white space-y-6"
+        >
+          <h2 class="text-3xl font-bold">Tech Skills</h2>
+
+          <!-- Container for Skill Categories -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-6">
+            <!-- Category 1: Languages -->
+            <div>
+              <h3 class="text-xl mb-2 text-left">Languages</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">TypeScript</span>
+                <span class="skill-badge">Dart</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl mb-2 text-left">Frontend Stack</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">Next.js</span>
+                <span class="skill-badge">React.js</span>
+                <span class="skill-badge">Flutter</span>
+                <span class="skill-badge">HTML</span>
+                <span class="skill-badge">CSS</span>
+                <span class="skill-badge">Bootstrap</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl mb-2 text-left">Backend Stack</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">Next.js</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Express.js</span>
+                <span class="skill-badge">Sequelize</span>
+                <span class="skill-badge">Mongoose</span>
+                <span class="skill-badge">Firebase</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl mb-2 text-left">Database Management</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">MongoDB</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">Firebase</span>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl mb-2 text-left">
+                Productivity & Collaboration Tools
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-badge">Visual Studio Code</span>
+                <span class="skill-badge">Android Studio</span>
+                <span class="skill-badge">Git (GitLab & GitHub)</span>
+                <span class="skill-badge">Atlassian Jira</span>
+                <span class="skill-badge">Confluence</span>
+                <span class="skill-badge">Slack</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section
+          id="experience"
+          class="min-h-[80vh] flex flex-col justify-center items-center text-center text-white space-y-2"
+        >
+          <h2 class="text-3xl font-bold">Projects</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-w-4xl">
+            <!-- Project 1 -->
+            <div class="bg-[#1c1e1f] p-4 rounded-lg">
+              <h3 class="text-xl font-semibold">Project Name</h3>
+              <p class="mt-2 text-gray-400">
+                Brief description of the project.
+              </p>
+            </div>
+            <!-- Additional projects can go here -->
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section
+          id="projects"
+          class="min-h-[80vh] flex flex-col justify-center items-center text-center text-white space-y-2"
+        >
+          <h2 class="text-3xl font-bold">Projects</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-w-4xl">
+            <!-- Project 1 -->
+            <div class="bg-[#1c1e1f] p-4 rounded-lg">
+              <h3 class="text-xl font-semibold">Project Name</h3>
+              <p class="mt-2 text-gray-400">
+                Brief description of the project.
+              </p>
+            </div>
+            <!-- Additional projects can go here -->
+          </div>
+        </section>
+      </main>
+
+      <footer class="primary-font-color">Footer</footer>
+      <script src="scripts.js"></script>
+    </div>
+  </body>
+</html>
