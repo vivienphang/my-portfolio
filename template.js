@@ -55,3 +55,10 @@ window.addEventListener("scroll", fadeInOnScroll);
 
 // Trigger initial check in case elements are already in the viewport
 fadeInOnScroll();
+
+document.querySelector("form").addEventListener("submit", function (event) {
+  const confirmed = confirm("Are you sure you want to submit the form?");
+  if (!confirmed) {
+    event.preventDefault(); // Prevent submission if not confirmed
+  }
+});
