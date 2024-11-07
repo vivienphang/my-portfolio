@@ -26,13 +26,16 @@ body {
   color: aliceblue;
 }
 
+.secondary-font-color {
+  color: #5442e1;
+}
+
 .typing-effect {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid #4299e1; /* Blue color matching text */
-  animation: typing-and-erasing 6s steps(20, end) infinite,
-    blink 0.75s step-end infinite;
+  border-right: 1px solid #5442e1;
+  animation: blinking 1s steps(1, end) infinite, typing 4s steps(40, end);
 }
 
 .skill-badge {
@@ -48,24 +51,24 @@ body {
   color: rgb(230, 230, 230);
 }
 
-@keyframes typing-and-erasing {
+@keyframes blinking {
   0% {
-    width: 0;
+    border-color: transparent;
   }
   50% {
-    width: 100%;
-  }
-  60% {
-    width: 100%;
+    border-color: rgb(99 102 241);
   }
   100% {
-    width: 0;
+    border-color: transparent;
   }
 }
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
+@keyframes typing-effect {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100;
   }
 }
 

@@ -1,7 +1,16 @@
-import { experiences } from "./data.js";
+import { experiences, projects } from "./data.js";
 
 const timeline = document.getElementById("timeline");
 const template = document.getElementById("timeline-item-template");
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+
+  menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+});
 
 // Generate the timeline items
 const generateTimeline = () => {
@@ -61,4 +70,32 @@ document.querySelector("form").addEventListener("submit", function (event) {
   if (!confirmed) {
     event.preventDefault(); // Prevent submission if not confirmed
   }
+});
+
+// Get the projects container and template
+const projectsContainer = document.querySelector("#projects .grid");
+const projectTemplate = document.querySelector("#project-template");
+
+// Loop through the projects and populate the template
+projects.forEach((project) => {
+  // Clone the template content
+  const projectCard = projectTemplate.content.cloneNode(true);
+
+  // Set the project details
+  projectCard.querySelector("img").setAttribute("alt", project.title);
+  projectCard.querySelector("h3").textContent = project.title;
+  projectCard.querySelector("p.text-gray-400").textContent =
+    project.description;
+  projectCard.querySelector(".stack-content").textContent =
+    project.stack.join(", ");
+  projectCard
+    .querySelector(".github-link")
+    .setAttribute("href", project.github);
+
+  if (project.live) {
+    const liveLink = projectCard.querySelector(".live-link");
+    liveLink.setAttribute("href", project.live);
+    liveLink.classList.remove("hidden");
+  }
+  projectsContainer.appendChild(projectCard);
 });

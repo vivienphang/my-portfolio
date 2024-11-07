@@ -40,3 +40,36 @@ export const experiences = [
     ],
   },
 ];
+
+export const projects = [
+  {
+    title: "AUREUS",
+    description: "Budget and Expense Manager App",
+    stack: [
+      "TypeScript, React, Passport.js, AWS S3, ChakraUI, Node.js, Express.js, MongoDB, Mongoose",
+    ],
+    github: "https://github.com/vivienphang/wal-ETZ-FE",
+  },
+  {
+    title: "PLATE PALS",
+    description: "Food Finder App with Poll Functionality",
+    stack: [
+      "JavaScript, React, MaterialUI, Passport.js, Node.js, Express.js, MongoDB, Mongoose",
+    ],
+    github: "https://github.com/vivienphang/food-finder",
+  },
+  {
+    title: "BOOK IT",
+    description: "Meeting Room Booking System",
+    stack: ["JavaScript, React, FullCalender.io, MaterialUI, Firebase"],
+    github: "https://github.com/vivienphang/booking-app",
+    live: "https://book-ebfoyxbd1-viviens-projects-19627313.vercel.app",
+  },
+  {
+    title: "POKER HOUR",
+    description: "Video Poker Game",
+    stack: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/vivienphang/video-poker-game",
+    live: "https://vivienphang.github.io/video-poker-game/",
+  },
+];
