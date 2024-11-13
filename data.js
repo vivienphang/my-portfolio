@@ -2,11 +2,13 @@ export const experiences = [
   {
     title: "Software Engineer, Frontend",
     company: "LionsBot International Pte Ltd",
-    date: "May 2023 – May 2024",
+    date: "May 2023 - May 2024",
     description: [
-      "Built an in-house component library (Nov 2023 – Mar 2024).",
-      "Enhanced reusability and efficiency by 90% for theme switching.",
-      "Developed components using Chakra UI and tested edge cases in Storybook.",
+      "Developed in-house component library which increased efficiency by approximately 90% to accommodate switching of different themes",
+      "Redevelopment of company's internal dashboard",
+      "Implemented new features to current dashboard",
+      "Solved production issues and participated in daily standups",
+      "Active collaboration with Product Designers (UI/UX Designers) and QA to meet project KPIs",
     ],
   },
   {
