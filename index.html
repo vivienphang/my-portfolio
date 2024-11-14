@@ -45,6 +45,12 @@
                 >
               </li>
               <li>
+                <a href="#projects" class="hover:text-indigo-500">Projects</a>
+              </li>
+              <li>
+                <a href="#education" class="hover:text-indigo-500">Education</a>
+              </li>
+              <li>
                 <a href="#contact" class="hover:text-indigo-500">Contact Me</a>
               </li>
             </ul>
@@ -55,6 +61,30 @@
       <!-- Main Content -->
       <main class="max-w-7xl mx-auto py-4 space-y-18 primary-font-color">
         <!-- Home Section -->
+        <!-- <section
+          class="min-h-[80vh] flex flex-col justify-center items-center text-white space-y-4"
+          id="home"
+        >
+          <h1 class="text-5xl text-center md:text-6xl font-bold">
+            Hello, I'm Vivien!
+          </h1>
+          <div class="flex items-center text-2xl md:text-3xl font-light">
+            <p class="whitespace-nowrap">I'm a&nbsp;</p>
+            <span class="text-indigo-500 font-medium typing-effect" id="typing"
+              >Software Developer.</span
+            >
+          </div>
+          <p class="text-lg md:text-xl text-center primary-font-color">
+            Passionate in transforming ideas into reality with clean, efficient
+            code.
+          </p>
+          <div>
+            <a href="assets/CV_nov2024.pdf" download="Vivien_CV.pdf">
+              <button class="skill-badge">Download CV</button>
+            </a>
+          </div>
+        </section> -->
+
         <section
           class="min-h-[80vh] flex flex-col justify-center items-center text-white space-y-4"
           id="home"
@@ -64,9 +94,10 @@
           </h1>
           <div class="flex items-center text-2xl md:text-3xl font-light">
             <p class="whitespace-nowrap">I'm a&nbsp;</p>
-            <span class="text-indigo-500 font-medium typing-effect"
-              >Software Developer.</span
-            >
+            <span
+              class="text-indigo-500 font-medium typing-effect"
+              id="typing"
+            ></span>
           </div>
           <p class="text-lg md:text-xl text-center primary-font-color">
             Passionate in transforming ideas into reality with clean, efficient
@@ -85,15 +116,23 @@
           class="min-h-[50vh] flex flex-col justify-center items-start text-center text-white space-y-2"
         >
           <h2 class="text-3xl font-bold">About Me</h2>
-          <div class="max-w-2xl text-lg mt-4 text-gray-300">
+          <div class="max-w-2xl text-lg mt-4 text-gray-300 space-y-4 mb-4">
             <!-- Left container for Executive summary -->
             <p class="text-justify">
               Former Biotech QA Executive turned Software Developer, passionate
               about transforming ideas into reality with clean, efficient code.
-              With seven years in healthcare, I transitioned into tech in 2022,
-              fueled by curiosity and the satisfaction of building applications.
+              With 8 years in healthcare, I transitioned into tech in 2022,
+              fueled by curiosity and the satisfaction of building applications
+              that simplify daily lives and create impactful work.
+            </p>
+            <p class="text-justify">
               Embracing a growth mindset, I thrive in the ever-evolving world of
               software development and continuous learning.
+            </p>
+            <p class="text-justify">
+              Outside of programming, I enjoy reading both fiction and
+              non-fiction, jogging, exploring the newest cafes in town, and
+              staying energized with a great cup of latte.
             </p>
           </div>
         </section>
@@ -101,7 +140,7 @@
         <!-- Skills Section -->
         <section
           id="skills"
-          class="min-h-[80vh] flex flex-col justify-center items-start text-center text-white space-y-6 mb-12 md:mb-0"
+          class="min-h-[80vh] flex flex-col justify-center items-start text-center text-white space-y-6 mb-8"
         >
           <h2 class="text-3xl font-bold">Tech Skills</h2>
 
@@ -113,6 +152,7 @@
               <div class="flex flex-wrap gap-2">
                 <span class="skill-badge">JavaScript</span>
                 <span class="skill-badge">TypeScript</span>
+                <span class="skill-badge">Python</span>
                 <span class="skill-badge">Dart</span>
               </div>
             </div>
@@ -169,22 +209,31 @@
           class="min-h-[80vh] flex flex-col justify-center items-center text-white space-y-4"
         >
           <h2 class="text-3xl font-bold mb-8">Professional Experiences</h2>
-          <div id="timeline" class="space-y-8"></div>
-          <template id="timeline-item-template">
-            <div
-              class="bg-[#1c1e1f] p-4 rounded-lg shadow-lg w-full fade-in"
-              style="--delay: 0.3s"
-            >
-              <h3 class="text-l">
-                <span class="job-title"></span>
-                <span class="text-gray-400"
-                  >(<span class="company"></span>)</span
-                >
-              </h3>
+          <div id="experience-timeline" class="space-y-8"></div>
+          <template id="experience-item-template">
+            <div class="bg-[#1c1e1f] p-4 rounded-lg shadow-lg w-full fade-in">
+              <h3 class="text-l job-title"></h3>
+              <p class="mt-1 text-gray-400 company"></p>
               <p class="mt-1 text-gray-400 date"></p>
               <ul
                 class="mt-2 list-disc list-inside text-gray-300 description"
               ></ul>
+            </div>
+          </template>
+        </section>
+
+        <!-- Education Section -->
+        <section
+          id="education"
+          class="min-h-[80vh] w-full flex flex-col justify-center items-center text-center text-white space-y-2 my-24"
+        >
+          <h2 class="text-3xl font-bold mb-8">Education</h2>
+          <div id="education-timeline" class="space-y-8"></div>
+          <template id="education-item-template">
+            <div class="bg-[#1c1e1f] p-4 rounded-lg shadow-lg w-full fade-in">
+              <h3 class="text-l edu-title font-semibold"></h3>
+              <p class="mt-1 text-gray-400 institute"></p>
+              <p class="mt-1 text-gray-400 year"></p>
             </div>
           </template>
         </section>
@@ -196,40 +245,34 @@
         >
           <h2 class="text-3xl font-bold mb-12">Projects</h2>
           <div
-            class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-w-4xl"
+            class="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 mt-6 max-w-7xl w-full"
           ></div>
-
-          <!-- Template for Project Card -->
           <template id="project-template">
-            <div class="bg-[#1c1e1f] p-4 rounded-lg flex flex-col items-center">
+            <div
+              class="bg-[#1c1e1f] p-4 rounded-lg flex flex-col items-center fade-in w-full max-w-lg"
+            >
               <img
-                src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZWNvbW1lcmNlJTIwd2Vic2l0ZXxlbnwwfHwwfHx8MA%3D%3D"
-                alt="Project Image"
-                class="rounded-lg mb-4"
+                src=""
+                alt=""
+                class="w-100 h-60 object-fill rounded-md mb-4 project-image"
               />
-              <h3 class="text-xl font-semibold primary-font">Project Title</h3>
-              <p class="mt-2 text-gray-400 primary-font">Project Description</p>
-              <p
-                class="mt-2 text-sm text-gray-500 min-h-14 overflow-y-auto primary-font"
-              >
+              <h3 class="text-xl font-semibold"></h3>
+              <p class="mt-2 text-gray-400"></p>
+              <p class="mt-2 text-sm text-gray-500 min-h-[60px]">
                 <strong>Stack:</strong>
-                <span class="stack-content secondary-font"></span>
+                <span class="stack-content"></span>
               </p>
-
               <div class="mt-4 flex space-x-4">
                 <a
                   href="#"
-                  target="_blank"
-                  class="github-link text-indigo-500 hover:text-indigo-400"
+                  class="github-link text-indigo-500 hover:text-indigo-400 hidden"
                   >GitHub</a
                 >
                 <a
                   href="#"
-                  target="_blank"
                   class="live-link text-indigo-500 hover:text-indigo-400 hidden"
+                  >Live</a
                 >
-                  Live
-                </a>
               </div>
             </div>
           </template>
@@ -237,7 +280,7 @@
 
         <section
           id="contact"
-          class="min-h-[50vh] flex flex-col justify-center items-center text-center text-white space-y-4"
+          class="min-h-[50vh] flex flex-col justify-center items-center text-center text-white space-y-4 my-40"
         >
           <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
           <form
@@ -334,6 +377,7 @@
       </script>
 
       <script type="module" src="./template.js" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     </div>
   </body>
 </html>

@@ -30,14 +30,6 @@ body {
   color: #5442e1;
 }
 
-.typing-effect {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 1px solid #5442e1;
-  animation: blinking 1s steps(1, end) infinite, typing 4s steps(40, end);
-}
-
 .skill-badge {
   padding: 4px 10px;
   min-width: max-content;
@@ -49,27 +41,6 @@ body {
 }
 .skill-badge:hover {
   color: rgb(230, 230, 230);
-}
-
-@keyframes blinking {
-  0% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: rgb(99 102 241);
-  }
-  100% {
-    border-color: transparent;
-  }
-}
-
-@keyframes typing-effect {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100;
-  }
 }
 
 /* Add this to your CSS file */

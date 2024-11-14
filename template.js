@@ -1,7 +1,22 @@
-import { experiences, projects } from "./data.js";
+import { experiences, projects, education } from "./data.js";
 
-const timeline = document.getElementById("timeline");
-const template = document.getElementById("timeline-item-template");
+document.addEventListener("DOMContentLoaded", function () {
+  new Typed("#typing", {
+    strings: ["Software Developer.", "Lifelong Learner."],
+    typeSpeed: 60,
+    backSpeed: 30,
+    backDelay: 1500,
+    loop: true,
+    showCursor: true,
+    cursorChar: "|",
+    smartBackspace: true,
+  });
+});
+
+const experienceTimeline = document.getElementById("experience-timeline");
+const experienceTemplate = document.getElementById("experience-item-template");
+const educationTimeline = document.getElementById("education-timeline");
+const educationTemplate = document.getElementById("education-item-template");
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuBtn = document.getElementById("menu-btn");
@@ -12,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Generate the timeline items
+// Generate experience timeline
 const generateTimeline = () => {
   experiences.forEach((exp, index) => {
     // Clone the template content
-    const item = template.content.cloneNode(true);
+    const item = experienceTemplate.content.cloneNode(true);
 
     // Populate content
     item.querySelector(".job-title").textContent = exp.title;
@@ -32,12 +47,27 @@ const generateTimeline = () => {
     });
 
     // Add delay for sequential animation
-    const delay = `${index * 0.3}s`; // Increment delay for each item
+    const delay = `${index * 0.3}s`;
     const container = item.querySelector(".fade-in");
-    container.style.setProperty("--delay", delay); // Set CSS variable
+    container.style.setProperty("--delay", delay);
+    experienceTimeline.appendChild(item);
+  });
+};
 
-    // Append the populated item to the timeline
-    timeline.appendChild(item);
+// Generate education timeline
+const generateEduTimeline = () => {
+  education.forEach((edu, index) => {
+    const item = educationTemplate.content.cloneNode(true);
+
+    item.querySelector(".edu-title").textContent = edu.title;
+    item.querySelector(".institute").textContent = edu.institute;
+    item.querySelector(".year").textContent = edu.year;
+
+    // Add delay for sequential animation
+    const delay = `${index * 0.3}s`;
+    const container = item.querySelector(".fade-in");
+    container.style.setProperty("--delay", delay);
+    educationTimeline.appendChild(item);
   });
 };
 
@@ -60,6 +90,7 @@ const fadeInOnScroll = () => {
 
 // Generate the timeline and add scroll event listener
 generateTimeline();
+generateEduTimeline();
 window.addEventListener("scroll", fadeInOnScroll);
 
 // Trigger initial check in case elements are already in the viewport
@@ -68,7 +99,7 @@ fadeInOnScroll();
 document.querySelector("form").addEventListener("submit", function (event) {
   const confirmed = confirm("Are you sure you want to submit the form?");
   if (!confirmed) {
-    event.preventDefault(); // Prevent submission if not confirmed
+    event.preventDefault();
   }
 });
 
@@ -82,20 +113,43 @@ projects.forEach((project) => {
   const projectCard = projectTemplate.content.cloneNode(true);
 
   // Set the project details
-  projectCard.querySelector("img").setAttribute("alt", project.title);
+  const projectImage = projectCard.querySelector("img");
+  if (project.image) {
+    // Set the src and alt attributes for the project image
+    projectImage.setAttribute("src", project.image);
+    projectImage.setAttribute("alt", project.title);
+  } else {
+    // Hide the image if no source is provided
+    projectImage.classList.add("hidden");
+  }
+
   projectCard.querySelector("h3").textContent = project.title;
   projectCard.querySelector("p.text-gray-400").textContent =
     project.description;
   projectCard.querySelector(".stack-content").textContent =
     project.stack.join(", ");
-  projectCard
-    .querySelector(".github-link")
-    .setAttribute("href", project.github);
+  const githubLink = projectCard.querySelector(".github-link");
+  if (project.github) {
+    githubLink.setAttribute("href", project.github);
+    githubLink.classList.remove("hidden"); // Ensure it's visible
+  }
 
   if (project.live) {
     const liveLink = projectCard.querySelector(".live-link");
     liveLink.setAttribute("href", project.live);
     liveLink.classList.remove("hidden");
   }
+
+  // Append the project card to the grid
   projectsContainer.appendChild(projectCard);
+});
+
+const typingEffect = document.getElementById("typing");
+
+typingEffect.addEventListener("animationend", () => {
+  // Clear animation by resetting its name
+  typingEffect.style.animation = "none";
+  void typingEffect.offsetWidth; // Trigger reflow to restart animation
+  typingEffect.style.animation =
+    "typing 4s steps(40, end), blinking 1s step-end infinite";
 });
